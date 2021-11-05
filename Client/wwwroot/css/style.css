@@ -1,0 +1,264 @@
+﻿.sidebar[b-ijoo07migi] {
+    background-image: linear-gradient( 180deg, #6699CC 0%,#006699 70%) !important;
+}
+
+.onePage {
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loadingBox {
+    height: 87vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loadingBox img {
+    width: 50px;
+    margin-bottom: 20px;
+}
+
+.loadingBox .imgAnim {
+    animation: loading 1s infinite ease-in-out;
+}
+
+#loading .l {
+    width: 20px;
+    height: 20px;
+    background-color: aquamarine;
+    display: inline-block;
+    border-radius: 50%;
+    animation: loading 1s infinite ease-in-out;
+}
+
+
+#loading .l1 {
+    background-color: #99CCFF;
+}
+
+#loading .l2 {
+    margin-right: 10px;
+    margin-left: 10px;
+    animation-delay: -0.9s;
+    background-color: #FFCC33;
+}
+
+#loading .l3 {
+    animation-delay: -0.8s;
+    background-color: #FFFFCC;
+}
+
+
+@keyframes loading {
+    0%,100% {
+        transform: translateY(-15px);
+    }
+
+    50% {
+        transform: translateY(15px);
+    }
+}
+
+
+.appearAnim1 {
+    animation: appear 0.8s;
+}
+.appearAnim2 {
+    animation: appear 0.9s;
+}
+.appearAnim3 {
+    animation: appear 1s;
+}
+.appearAnim4 {
+    animation: appear 1.25s;
+}
+
+@keyframes appear {
+    0% {
+        opacity:0;
+        transform: translateY(-100vh);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.table{
+    margin-bottom:0 !important;
+}
+
+.algTable{
+    margin-top:20px;
+}
+
+.showAnim {
+    -webkit-animation: showAnimation 1s;
+}
+
+@keyframes showAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.bigBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    
+}
+
+a {
+    text-decoration:none;
+}
+.CQanCard .face {
+    transition:0.5s;
+}
+
+.CQanCard .face1 {
+    position: relative;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-sizing: border-box;
+    z-index: 1;
+    transition: 0.5s;
+    border-radius: 10px;
+    transform: translateY(10vh);
+}
+
+.CQanCard .face1 .cardContainer {
+    opacity:0.5;
+    transition:0.5s;
+}
+
+.CQanCard:hover .face1 .cardContainer {
+    opacity: 1;
+}
+
+.CQanCard:hover .face1 {
+    border-radius: 0px;
+    background: #FF9999;
+    height: 10vh;
+}
+
+.CQanCard .face2 {
+    position: relative;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    font-size: 1vh;
+    box-sizing: border-box;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+    transform: translateY(-10vh);
+    border-radius: 10px;
+    color: #586166;
+    font-size:0.2vw;
+    padding:25px;
+}
+
+.CQanCard:hover .face2 {
+    transform: translateY(10vh);
+    border-radius: 0px;
+}
+
+
+.cbox{
+    margin-bottom:20px;
+    padding-left:125px;
+    padding-right:75px;
+}
+
+.cardTitle {
+    font-size: 1.3vw;
+    color: #0099CC;
+}
+
+.cardCTitle {
+    font-size: 0.5vw;
+    color: #FF9900;
+}
+
+.CQanCard:hover .face1 .cardContainer .cardCTitle {
+    color:#fff;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #b4c7d0;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    border-radius: 5px;
+}
+
+.textLeft {
+    text-align: left;
+}
+
+.abRight{
+    position:absolute;
+    right:20px;
+}
+
+.leftCont{
+    width:80%;
+    margin-top:10px;
+}
+
+.eachCont{
+    margin-bottom:30px;
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+
+}
+
+.searchContent {
+    color: #495057;
+    font-size: .875rem;
+}
+
+.searchContent .searchCard {
+    background-color: transparent;
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: #e4e6ef;
+    padding: 10px;
+    min-height: 50px;
+    display:flex;
+    transition:0.3s linear;
+}
+
+.searchContent .searchCard:hover {
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+}
+
+.orderTypeStyle {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

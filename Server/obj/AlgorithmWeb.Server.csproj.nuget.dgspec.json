@@ -1,0 +1,220 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Server\\AlgorithmWeb.Server.csproj": {}
+  },
+  "projects": {
+    "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Client\\AlgorithmWeb.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Client\\AlgorithmWeb.Client.csproj",
+        "projectName": "AlgorithmWeb.Client",
+        "projectPath": "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Client\\AlgorithmWeb.Client.csproj",
+        "packagesPath": "C:\\Users\\14353\\.nuget\\packages\\",
+        "outputPath": "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Client\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\14353\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Shared\\AlgorithmWeb.Shared.csproj": {
+                "projectPath": "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Shared\\AlgorithmWeb.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "BootstrapBlazor": {
+              "target": "Package",
+              "version": "[5.14.6, )"
+            },
+            "BootstrapBlazor.Chart": {
+              "target": "Package",
+              "version": "[5.3.0, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[6.0.0-rc.1.21452.15, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0-rc.1.21452.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
+              "version": "[6.0.0-rc.1.21451.13, 6.0.0-rc.1.21451.13]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.1.21463.6\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Server\\AlgorithmWeb.Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Server\\AlgorithmWeb.Server.csproj",
+        "projectName": "AlgorithmWeb.Server",
+        "projectPath": "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Server\\AlgorithmWeb.Server.csproj",
+        "packagesPath": "C:\\Users\\14353\\.nuget\\packages\\",
+        "outputPath": "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Server\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\14353\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Client\\AlgorithmWeb.Client.csproj": {
+                "projectPath": "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Client\\AlgorithmWeb.Client.csproj"
+              },
+              "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Shared\\AlgorithmWeb.Shared.csproj": {
+                "projectPath": "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Shared\\AlgorithmWeb.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": {
+              "target": "Package",
+              "version": "[6.0.0-rc.1.21452.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.1.21463.6\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Shared\\AlgorithmWeb.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Shared\\AlgorithmWeb.Shared.csproj",
+        "projectName": "AlgorithmWeb.Shared",
+        "projectPath": "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Shared\\AlgorithmWeb.Shared.csproj",
+        "packagesPath": "C:\\Users\\14353\\.nuget\\packages\\",
+        "outputPath": "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\14353\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.1.21463.6\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

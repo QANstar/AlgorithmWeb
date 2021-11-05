@@ -1,0 +1,92 @@
+﻿@page "/fibonacci"
+@using AlgorithmWeb.Shared
+@inject HttpClient Http;
+
+<div class="bigBox">
+	<div>
+	<div class="row">
+		<div class="cbox col-md-6 appearAnim4">
+			<a href="fibonacci/one">
+				<div class="CQanCard">
+					<div class="face face1">
+						<div class="cardContainer">
+							<div class="cardTitle">五种方式计算</div>
+							<div class="cardCTitle">迭代、迭代改进、递归、显示公式、矩阵</div>
+						</div>
+					</div>
+					<div class="face face2">
+						<p>
+							&nbsp&nbsp&nbsp&nbsp对于相同的输入n值，利用五种方法（迭代、迭代改进、递归、显示公式、矩阵）计算第n个斐波那契数，并比较这五种方法的基本操作、基本操作次数、执行时间，以掌握对数、线性和指数增长率的极大差别。
+						</p>
+					</div>
+				</div>
+			</a>
+			
+		</div>
+		<div class="cbox col-md-6 appearAnim3">
+			<a href="fibonacci/two">
+				<div class="CQanCard">
+					<div class="face face1">
+						<div class="cardContainer">
+							<div class="cardTitle">迭代、递归算法</div>
+							<div class="cardCTitle">寻找不超过int类型最大整数的斐波那契数</div>
+						</div>
+					</div>
+					<div class="face face2">
+						<ul>
+							<li>
+								利用迭代算法寻找不超过编程环境能够支持的最大整数的斐波那契数是第几个斐波那契数，给出执行时间。
+							</li>
+							<li>
+								利用递归算法寻找不超过编程环境能够支持的最大整数的斐波那契数是第几个斐波那契数，给出执行时间。
+							</li>
+							<li>
+								根据迭代计算出的最大的斐波那契数序号n，采用递归方式计算第n个斐波那契数，看其是否可以在1分钟内完成。
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</a>
+			
+		</div>
+	</div>
+	<div class="row">
+		<div class="cbox col-md-6 appearAnim2">
+			<a href="fibonacci/three">
+				<div class="CQanCard">
+					<div class="face face1">
+						<div class="cardContainer">
+							<div class="cardTitle">递归、迭代算法</div>
+							<div class="cardCTitle">计算30秒内算出的最大斐波那契数</div>
+						</div>
+					</div>
+					<div class="face face2">
+						<p>
+							&nbsp&nbsp&nbsp&nbsp利用递归算法计算你的计算机能够在30秒内计算出的最大斐波那契数是第几个，计算出下一个斐波那契数的时间是多少，利用迭代算法求解同样的问题。
+						</p>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="cbox col-md-6 appearAnim1">
+			<a href="fibonacci/four">
+				<div class="CQanCard">
+					<div class="face face1">
+						<div class="cardContainer">
+							<div class="cardTitle">公式计算</div>
+							<div class="cardCTitle">找出出现误差时的最小n值</div>
+						</div>
+					</div>
+					<div class="face face2">
+						<p>
+							&nbsp&nbsp&nbsp&nbsp利用公式F(n)=[Φ^n/sqrt(5)]快速计算第n个斐波那契数，找出出现误差时的最小n值。
+						</p>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	</div>
+	
+</div>

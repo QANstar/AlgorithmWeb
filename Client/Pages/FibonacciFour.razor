@@ -1,0 +1,70 @@
+﻿@page "/fibonacci/four"
+@using AlgorithmWeb.Shared
+@inject HttpClient Http;
+@if (isLoading)
+{
+    <div class="loadingBox">
+        <img class="imgAnim" src="/paiMeng.webp" />
+        <div id="loading">
+            <div class="l l1"></div>
+            <div class="l l2"></div>
+            <div class="l l3"></div>
+		</div>
+    </div>
+}
+else
+{
+    <div  class="showAnim">
+        <div style="margin-bottom:3vh">
+            <a href="fibonacci"><Button Color="Color.Info">返回</Button></a>
+        </div>
+        <div style="margin-top:10vh;justify-content: center;" class="row">
+            <div class="col-md-4">
+                <Card Color="Color.Primary" IsCenter="true">
+                <CardHeader>
+                    找出显示公式出现误差的最小值
+                    <a @onclick="sumButton" class="abRight">计算</a>
+                </CardHeader>
+                <CardBody>
+                    @if (isLoading1)
+                    {
+                        <div class="loadingBox" style="height:100%">
+                            <img class="imgAnim" src="/paiMeng.webp" />
+                            <div id="loading">
+                                <div class="l l1"></div>
+                                <div class="l l2"></div>
+                                <div class="l l3"></div>
+	                        </div>
+                        </div>
+                    }
+                    else
+                    {
+                        @if (isSum1)
+                        {
+                            <ul class="textLeft" > 
+                                <li>正确结果：@fibonacciErrModel.resultNum</li>
+                                <li>错误结果：@fibonacciErrModel.errorNum</li>
+                                <li>执行时间：@fibonacciErrModel.time</li>
+                                <li>第几个斐波那契数：@fibonacciErrModel.num</li>
+                                
+                            </ul>
+                    }
+                        else
+                        {
+                            <ul class="textLeft" > 
+                                <li>正确结果：未计算</li>
+                                <li>结果：未计算</li>
+                                <li>执行时间：未计算</li>
+                                <li>第几个斐波那契数：未计算</li>
+                            </ul>
+                        }
+
+                    }
+                       
+                </CardBody>
+            </Card>
+            </div>
+        </div>
+        
+    </div>
+}

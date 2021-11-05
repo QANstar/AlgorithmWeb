@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\QAN_Program\Web\DotNet\AlgorithmWeb\Publish</_PublishTargetUrl>
+    <History>True|2021-10-29T03:23:00.2081435Z;False|2021-10-29T11:21:17.2029813+08:00;True|2021-10-28T11:30:06.1029201+08:00;</History>
+  </PropertyGroup>
+</Project>

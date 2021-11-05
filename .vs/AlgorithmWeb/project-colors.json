@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e30c423d-ff86-420d-b0d3-db2daa7edc0e": {
+      "ProjectGuid": "e30c423d-ff86-420d-b0d3-db2daa7edc0e",
+      "DisplayName": "AlgorithmWeb.Server",
+      "ColorIndex": 0
+    },
+    "167bb470-af7e-49e9-a1f4-6e23e629564b": {
+      "ProjectGuid": "167bb470-af7e-49e9-a1f4-6e23e629564b",
+      "DisplayName": "AlgorithmWeb.Client",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "杂项文件",
+      "ColorIndex": -1
+    },
+    "b83d4c1c-c092-4ca6-85ce-5d5c67d119bb": {
+      "ProjectGuid": "b83d4c1c-c092-4ca6-85ce-5d5c67d119bb",
+      "DisplayName": "AlgorithmWeb.Shared",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

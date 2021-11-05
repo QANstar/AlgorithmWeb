@@ -1,0 +1,53 @@
+﻿@page "/fibonacci/one"
+@using AlgorithmWeb.Shared
+@inject HttpClient Http;
+@if (isLoading)
+{
+    <div class="loadingBox">
+        <img class="imgAnim" src="/paiMeng.webp" />
+        <div id="loading">
+            <div class="l l1"></div>
+            <div class="l l2"></div>
+            <div class="l l3"></div>
+		</div>
+    </div>
+}
+else
+{
+    <div  class="showAnim">
+        <div style="margin-bottom:3vh">
+            <a href="fibonacci"><Button Color="Color.Info">返回</Button></a>
+        </div>
+        <h3>计算菲波拉契数</h3>
+        <div class="row g-3">
+            <div class="col-auto col-form-label">
+                <span>请输入需要计算出第几个菲波拉契数：</span>
+            </div>
+            <div class="col-3">
+                <BootstrapInput TValue="int" @bind-Value="@numInput" placeholder="@PlaceHolderText" OnEnterAsync="OnEnterAsync" OnEscAsync="OnEscAsync"  />
+            </div>
+            <div class="col-2"><Button Text="计算" IsAsync="true" OnClick="@ClickAsyncButton" /></div>
+        </div>
+        @if(fibonacciModelList != null)
+        {
+            <div class="algTable">
+                
+                    <Table TItem="FibonacciModel" Items="@fibonacciModelList" IsBordered="true"  ShowLoading="true" >
+                        <TableColumns>
+                            <TableColumn @bind-Field="@context.name" Text="方法名称" Searchable="true" />
+                            <TableColumn @bind-Field="@context.resultNum" Text="结果" Searchable="true"/>
+                            <TableColumn @bind-Field="@context.opeNum" Text="基本操作次数" Searchable="true"/>
+                            <TableColumn @bind-Field="@context.time" Text="时间(ms)" Searchable="true" />
+                        </TableColumns>
+                     </Table>
+            </div>
+            <div style="display:flex;margin-top:20px;">
+                <Chart Width="50%" ChartType="ChartType.Bar" OnInitAsync="() => OnInit1(true)" />
+                <Chart Width="50%" ChartType="ChartType.Bar" OnInitAsync="() => OnInit2(true)" />
+            </div>
+        }
+        
+    </div>
+
+
+}

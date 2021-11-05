@@ -1,0 +1,81 @@
+﻿@page "/search"
+@using AlgorithmWeb.Shared
+@inject HttpClient Http;
+@if (isLoading)
+{
+    <div class="loadingBox">
+        <img class="imgAnim" src="/paiMeng.webp" />
+        <div id="loading">
+            <div class="l l1"></div>
+            <div class="l l2"></div>
+            <div class="l l3"></div>
+		</div>
+    </div>
+}
+else
+{
+    <div  class="showAnim">
+        <h3>检索算法</h3>
+        <div class="leftCont">
+            <div class="row g-3">
+                <div class="col-12">
+                    <FloatingLabel  TValue="string" @bind-Value="@inputStr" LabelText="请输入任意长度的随机数组（以 , 隔开）" ShowLabel="true"/>
+                </div>
+            </div>
+            <div class="buttonGroup">
+                <div style="margin-right:10px;"><Button Text="清空" Color="Color.Danger" IsAsync="true" OnClick="@ClickAsyncClearButton" /></div>
+                <div style="margin-right:10px;"><Button Text="随机生成" Color="Color.Warning" IsAsync="true" OnClick="@ClickAsyncRandButton" /></div>
+                <div><Button Text="确认" Color="Color.Success" IsAsync="true" OnClick="@ClickAsyncSureButton" /></div>
+            </div>
+        </div>
+        <div class="leftCont eachCont">
+            <h5>判断排序类型</h5>
+            <div class="searchContent">
+                <p>设计一个算法判断要求2中产生的整数数组是否为未排序(输出0)、升序(输出1)、降序（输出2）、先升后降（输出3）、或先降后升（输出4）状态。</p>
+                <div class="searchCard">
+                    @if (numArr == null)
+                    {
+                        <div class="orderTypeStyle">
+                             <Tag Icon="fa fa-fw fa-warning" Color="Color.Warning">未确认</Tag>
+                        </div>
+                    }
+                    else
+                    {
+                        
+                        <Chart Width="70%" ChartType="ChartType.Line" OnInitAsync="() => OnInit1(true)" />
+                        <div class="orderTypeStyle" style="width:30%">
+                             <Tag Icon="fa fa-fw fa-check-circle" Color="Color.Success">@orderTypeStr</Tag>
+                        </div>
+                        
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="leftCont eachCont">
+            <h5>顺序搜索</h5>
+            <div class="searchContent">
+                <p>给定某具体元素，使用顺序检索算法判断该具体元素是否出现在要求2中产生的数组中，并统计关键字比较次数。</p>
+                <div class="searchCard">
+                    @if (numArr == null)
+                    {
+                        <div class="orderTypeStyle">
+                             <Tag Icon="fa fa-fw fa-warning" Color="Color.Warning">未确认</Tag>
+                        </div>
+                    }
+                    else
+                    {
+                        
+                        <div class="row">
+                            <div class="col-12">
+                                <FloatingLabel  TValue="int" @bind-Value="@searchNum1" LabelText="请输入想查找的数" ShowLabel="true"/>
+                            </div>
+                        </div>
+                        
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+}

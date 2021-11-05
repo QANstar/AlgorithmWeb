@@ -1,0 +1,116 @@
+﻿@page "/fibonacci/three"
+@using AlgorithmWeb.Shared
+@inject HttpClient Http;
+@if (isLoading)
+{
+    <div class="loadingBox">
+        <img class="imgAnim" src="/paiMeng.webp" />
+        <div id="loading">
+            <div class="l l1"></div>
+            <div class="l l2"></div>
+            <div class="l l3"></div>
+		</div>
+    </div>
+}
+else
+{
+    <div  class="showAnim">
+        <div style="margin-bottom:3vh">
+            <a href="fibonacci"><Button Color="Color.Info">返回</Button></a>
+        </div>
+        <div style="margin-top:10vh;justify-content: center;" class="row">
+            <div class="col-md-4">
+                <Card Color="Color.Primary" IsCenter="true">
+                <CardHeader>
+                    迭代计算
+                    <a @onclick="iterationMax30" class="abRight">计算</a>
+                </CardHeader>
+                <CardBody>
+                    @if (isLoading1)
+                    {
+                        <div class="loadingBox" style="height:100%">
+                            <img class="imgAnim" src="/paiMeng.webp" />
+                            <div id="loading">
+                                <div class="l l1"></div>
+                                <div class="l l2"></div>
+                                <div class="l l3"></div>
+	                        </div>
+                        </div>
+                    }
+                    else
+                    {
+                        @if (isSum1)
+                        {
+                            <ul class="textLeft" > 
+                                <li>结果：@iteraFibMode.resultNum</li>
+                                <li>执行时间：@iteraFibMode.time1</li>
+                                <li>第几个斐波那契数：@iteraFibMode.num</li>
+                                <li>下一个数：@iteraFibMode.resultNum2</li>
+                                <li>下一个数执行时间：@iteraFibMode.time2</li>
+                            </ul>
+                    }
+                        else
+                        {
+                            <ul class="textLeft" > 
+                                <li>结果：未计算</li>
+                                <li>执行时间：未计算</li>
+                                <li>第几个斐波那契数：未计算</li>
+                                <li>下一个数：未计算</li>
+                                <li>下一个数执行时间：未计算</li>
+                            </ul>
+                        }
+
+                    }
+                       
+                </CardBody>
+            </Card>
+            </div>
+            <div class="col-md-4">
+                <Card Color="Color.Warning" IsCenter="true">
+                <CardHeader>
+                    递归计算
+                    <a @onclick="recursionMax30" class="abRight">计算</a>
+                </CardHeader>
+                <CardBody>
+                    @if (isLoading2)
+                    {
+                        <div class="loadingBox" style="height:100%">
+                            <img class="imgAnim" src="/paiMeng.webp" />
+                            <div id="loading">
+                                <div class="l l1"></div>
+                                <div class="l l2"></div>
+                                <div class="l l3"></div>
+	                        </div>
+                        </div>
+                    }
+                    else
+                    {
+                        @if (isSum2)
+                        {
+                            <ul class="textLeft" > 
+                                <li>结果：@recursionFibMode.resultNum</li>
+                                <li>执行时间：@recursionFibMode.time1</li>
+                                <li>第几个斐波那契数：@recursionFibMode.num</li>
+                                <li>下一个数：@recursionFibMode.resultNum2</li>
+                                <li>下一个数执行时间：@recursionFibMode.time2</li>
+                            </ul>
+                    }
+                        else
+                        {
+                            <ul class="textLeft" > 
+                                <li>结果：未计算</li>
+                                <li>执行时间：未计算</li>
+                                <li>第几个斐波那契数：未计算</li>
+                                <li>下一个数：未计算</li>
+                                <li>下一个数执行时间：未计算</li>
+                            </ul>
+                        }
+
+                    }
+                </CardBody>
+            </Card>
+            </div>
+        </div>
+        
+    </div>
+}

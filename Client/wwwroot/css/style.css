@@ -239,6 +239,7 @@ a {
 .searchContent {
     color: #495057;
     font-size: .875rem;
+    transition:1s;
 }
 
 .searchContent .searchCard {
@@ -261,4 +262,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.searchNumInput{
+    display:flex;
 }

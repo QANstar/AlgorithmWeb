@@ -1,5 +1,7 @@
 ﻿using AlgorithmWeb.Shared;
 using BootstrapBlazor.Components;
+using Microsoft.AspNetCore.Components;
+using System.Diagnostics.CodeAnalysis;
 using System.Net.Http.Json;
 namespace AlgorithmWeb.Client.Pages
 {
@@ -8,51 +10,97 @@ namespace AlgorithmWeb.Client.Pages
         private bool isLoading = false;//加载
         private string inputStr = string.Empty;//输入字符串
         private int[] numArr;//输入数组
-        private int searchNum1;//查找数1
-        private string PlaceHolderText = "请输入...";//input提示
-        private SearchResultModel searchResultModel = new SearchResultModel();//搜索模型
-        private string orderTypeStr = string.Empty;//排序类型
 
+        private string inputStr2 = string.Empty;//输入字符串2
+        private int[] numArr2;//输入数组2
+
+        private string searchNum1 = string.Empty;//查找数1
+        private SearchResultModel searchResultModel1 = null;//搜索模型1
+
+        private string PlaceHolderText = "请输入...";//input提示
+
+        private string orderTypeStr = string.Empty;//排序类型
+        [NotNull]
+        private Message? MessageElement { get; set; }//提示
+        [Inject]
+        [NotNull]
+        public MessageService? MessageService { get; set; }//提示
 
         //确认
         private async Task ClickAsyncSureButton()
         {
+            isLoading = true;
             string[] resultSTr = inputStr.Split(",");
             numArr = Array.ConvertAll(resultSTr, int.Parse);
-            orderType();
+            orderTypeStr = await orderType(inputStr);
+            isLoading = false;
+
+            StateHasChanged();
+
+        }
+
+        //确认2
+        private async Task ClickAsyncSureButton2()
+        {
+            
+            string orderTypeRes = await orderType(inputStr2);
+            if (orderTypeRes == "升序" || orderTypeRes == "降序")
+            {
+                string[] resultSTr = inputStr2.Split(",");
+                numArr2 = Array.ConvertAll(resultSTr, int.Parse);
+            }
+            else
+            {
+                MessageElement.SetPlacement(Placement.Top);
+                await MessageService.Show(new MessageOption()
+                {
+                    Host = MessageElement,
+                    Content = "输入的数组不是升序或降序！！！",
+                    Icon = "fa fa-info-circle",
+                    Color = Color.Danger
+                });
+            }
+                
             StateHasChanged();
         }
 
         //排序类型
-        private async Task orderType()
+        private async Task<string> orderType(string input)
         {
-            isLoading = true;
+            string orderType = "";
+            
             int type = -1;
-            type = await Http.GetFromJsonAsync<int>("api/Search/showOrderApi?inputString=" + inputStr);
+            type = await Http.GetFromJsonAsync<int>("api/Search/showOrderApi?inputString=" + input);
             if (type != -1)
             {
                 switch (type)
                 {
                     case 0:
-                        orderTypeStr = "未排序";
+                        orderType = "未排序";
                         break;
                     case 1:
-                        orderTypeStr = "升序";
+                        orderType = "升序";
                         break;
                     case 2:
-                        orderTypeStr = "降序";
+                        orderType = "降序";
                         break;
                     case 3:
-                        orderTypeStr = "先升后降";
+                        orderType = "先升后降";
                         break;
                     case 4:
-                        orderTypeStr = "先降后升";
+                        orderType = "先降后升";
                         break;
                 }
-                isLoading = false;
             }
-            StateHasChanged();
+            return orderType;
         }
+
+        //顺序查找
+        private async Task sequenceSearchClick()
+        {
+            searchResultModel1 = await Http.GetFromJsonAsync<SearchResultModel>("api/Search/sequenceSearchApi?inputString=" + inputStr + "&n=" + searchNum1);
+        }
+
         //随机
         private async Task ClickAsyncRandButton()
         {
@@ -91,5 +139,8 @@ namespace AlgorithmWeb.Client.Pages
             });
             return Task.FromResult(ds);
         }
+
+
+
     }
 }

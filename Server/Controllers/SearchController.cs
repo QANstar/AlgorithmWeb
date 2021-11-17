@@ -19,7 +19,7 @@ namespace AlgorithmWeb.Server.Controllers
 
         //顺序查找
         [HttpGet]
-        public SearchResultModel sequenceSearchApi(string inputString, long n)
+        public SearchResultModel sequenceSearchApi(string inputString, int n)
         {
             Search search = new Search();
             string[] resultSTr = inputString.Split(",");

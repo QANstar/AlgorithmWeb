@@ -60,17 +60,23 @@ namespace AlgorithmWeb.Server.Class
         }
 
         //顺序搜索
-        public SearchResultModel sequenceSearch(int[] data,long n)
+        public SearchResultModel sequenceSearch(int[] data,int n)
         {
             SearchResultModel searchResultModel = new SearchResultModel();
             searchResultModel.opeNum = 0;
-            searchResultModel.serialNum = -1;
+            searchResultModel.index = 1;
+            int midNum = Math.Abs(n - data[0]);
             for (int i = 0; i < data.Length; i++)
             {
                 searchResultModel.opeNum++;
+                if(Math.Abs(n - data[i]) < midNum)
+                {
+                    midNum = Math.Abs(n - data[i]);
+                    searchResultModel.index = i + 1;
+                }
                 if (data[i] == n)
                 {
-                    searchResultModel.serialNum = i + 1;
+                    searchResultModel.index = i + 1;
                     return searchResultModel;
                 }
             }

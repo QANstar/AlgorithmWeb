@@ -66,11 +66,107 @@ else
                     {
                         
                         <div class="row">
-                            <div class="col-12">
-                                <FloatingLabel  TValue="int" @bind-Value="@searchNum1" LabelText="请输入想查找的数" ShowLabel="true"/>
+                            <div class="col-12 searchNumInput">
+                                <FloatingLabel  TValue="string" @bind-Value="@searchNum1" LabelText="请输入想查找的数" ShowLabel="true"/>
+                                <Button style="margin-left:10px" Color="Color.Secondary" OnClick="@sequenceSearchClick">检索</Button>
+                            </div>
+                            <div class="col-12" style="margin-top:20px">
+                                <h5>检索结果:</h5>
+                                <div>
+                                    @if(searchResultModel1!=null)
+                                    {
+                                        @for(int i = 0; i < numArr.Length; i++)
+                                        {
+                                            if(i == searchResultModel1.index - 1)
+                                            {
+                                                if(numArr[i] == int.Parse(searchNum1))
+                                                {
+                                                    <span style="color:#FF6666">@numArr[i]&nbsp&nbsp&nbsp&nbsp</span>
+                                                }
+                                                else
+                                                {
+                                                    <span style="color:#FF9933">@numArr[i]&nbsp&nbsp&nbsp&nbsp</span>  
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <span>@numArr[i]&nbsp&nbsp&nbsp&nbsp</span>
+                                            }
+                                        }
+                                        <div class="showAnim" style="margin-top:20px">
+                                            <div>
+                                                   @if(numArr[searchResultModel1.index - 1] == int.Parse(searchNum1))
+                                                    {
+                                                        <Card Color="Color.Success" IsCenter="true">
+                                                            <CardHeader>
+                                                                是否找到
+                                                            </CardHeader>
+                                                            <CardBody>
+                                                                    <h5 class="card-title">是</h5>
+                                                                    <p class="card-text">下标为：@searchResultModel1.index</p>
+                                                                    <p class="card-text">数值为：@numArr[searchResultModel1.index - 1]</p>
+                                                                    <p class="card-text">操作数为：@searchResultModel1.opeNum</p>
+                                                            </CardBody>
+                                                        </Card>
+                                                     }
+                                                    else
+                                                    {
+                                                      <Card Color="Color.Danger" IsCenter="true">
+                                                        <CardHeader>
+                                                            是否找到
+                                                        </CardHeader>
+                                                        <CardBody>
+                                                                <h5 class="card-title">否</h5>
+                                                                <p class="card-text">数值最接近的下标为：@searchResultModel1.index</p>
+                                                                <p class="card-text">数值为：@numArr[searchResultModel1.index - 1]</p>
+                                                                <p class="card-text">操作数为：@searchResultModel1.opeNum</p>
+                                                        </CardBody>
+                                                     </Card>
+                                                    }
+                                      
+                                            </div>
+                                            
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                         <Tag Icon="fa fa-fw fa-warning" Color="Color.Warning">未检索</Tag>
+                                    }
+
+                                </div>
                             </div>
                         </div>
-                        
+                    }
+                </div>
+            </div>
+        </div>
+
+
+         <div style="margin-top:30px" class="leftCont">
+            <div class="row g-3">
+                <div class="col-12">
+                    <FloatingLabel  TValue="string" @bind-Value="@inputStr2" LabelText="请输入任意长度的升序或降序数组（以 , 隔开）" ShowLabel="true"/>
+                </div>
+            </div>
+            <div class="buttonGroup">
+                <div style="margin-right:10px;"><Button Text="清空" Color="Color.Danger" IsAsync="true" OnClick="@ClickAsyncClearButton" /></div>
+                <div><Button Text="确认" Color="Color.Success" IsAsync="true" OnClick="@ClickAsyncSureButton2" /></div>
+            </div>
+        </div>
+        <div class="leftCont eachCont">
+            <h5>多种方法查找</h5>
+            <div class="searchContent">
+                <p>给定某具体元素，使用多种方法（顺序查找、二分查找、三分查找、插值查找）判断该具体元素是否出现在要求2中产生的升序或降序的数组中，并统计关键字比较次数。</p>
+                <div class="searchCard">
+                    @if (numArr2 == null)
+                    {
+                        <div class="orderTypeStyle">
+                             <Tag Icon="fa fa-fw fa-warning" Color="Color.Warning">未确认</Tag>
+                        </div>
+                    }
+                    else
+                    {
+      
                     }
                 </div>
             </div>
@@ -79,3 +175,4 @@ else
 
 
 }
+<Message @ref="MessageElement" />

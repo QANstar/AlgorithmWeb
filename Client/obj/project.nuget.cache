@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xcZPDX45tUasNbDequR2RkRU/aMZKFNJ++qbxDQiwO3Fq/u9YtVD/y/I5RXRn4s/JZxuxt9qsTf9SFjCByYnvQ==",
+  "dgSpecHash": "j7Qum1VJLCjaigG6WT52W3GVFFKkM8nwASHqbSl3o1nqas223ST8GIc3Gj9q2kxPmAFw7oDJJZitD7b2B8DyBg==",
   "success": true,
   "projectFilePath": "D:\\QAN_Program\\Web\\DotNet\\AlgorithmWeb\\Client\\AlgorithmWeb.Client.csproj",
   "expectedPackageFiles": [
@@ -42,7 +42,7 @@
     "C:\\Users\\14353\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0-rc.1.21451.13\\system.runtime.compilerservices.unsafe.6.0.0-rc.1.21451.13.nupkg.sha512",
     "C:\\Users\\14353\\.nuget\\packages\\system.text.encodings.web\\6.0.0-rc.1.21451.13\\system.text.encodings.web.6.0.0-rc.1.21451.13.nupkg.sha512",
     "C:\\Users\\14353\\.nuget\\packages\\system.text.json\\6.0.0-rc.1.21451.13\\system.text.json.6.0.0-rc.1.21451.13.nupkg.sha512",
-    "C:\\Users\\14353\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.0-rc.1.21451.13\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.0-rc.1.21451.13.nupkg.sha512"
+    "C:\\Users\\14353\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.0\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

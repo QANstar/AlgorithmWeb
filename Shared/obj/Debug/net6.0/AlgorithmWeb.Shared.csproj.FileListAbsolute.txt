@@ -2,7 +2,6 @@ D:\QAN_Program\Web\DotNet\AlgorithmWeb\Shared\bin\Debug\net6.0\AlgorithmWeb.Shar
 D:\QAN_Program\Web\DotNet\AlgorithmWeb\Shared\bin\Debug\net6.0\AlgorithmWeb.Shared.dll
 D:\QAN_Program\Web\DotNet\AlgorithmWeb\Shared\bin\Debug\net6.0\ref\AlgorithmWeb.Shared.dll
 D:\QAN_Program\Web\DotNet\AlgorithmWeb\Shared\bin\Debug\net6.0\AlgorithmWeb.Shared.pdb
-D:\QAN_Program\Web\DotNet\AlgorithmWeb\Shared\obj\Debug\net6.0\AlgorithmWeb.Shared.GlobalUsings.g.cs
 D:\QAN_Program\Web\DotNet\AlgorithmWeb\Shared\obj\Debug\net6.0\AlgorithmWeb.Shared.csproj.AssemblyReference.cache
 D:\QAN_Program\Web\DotNet\AlgorithmWeb\Shared\obj\Debug\net6.0\AlgorithmWeb.Shared.GeneratedMSBuildEditorConfig.editorconfig
 D:\QAN_Program\Web\DotNet\AlgorithmWeb\Shared\obj\Debug\net6.0\AlgorithmWeb.Shared.AssemblyInfoInputs.cache

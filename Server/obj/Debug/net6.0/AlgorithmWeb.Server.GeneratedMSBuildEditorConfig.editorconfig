@@ -10,10 +10,11 @@ build_property.RootNamespace = AlgorithmWeb.Server
 build_property.RootNamespace = AlgorithmWeb.Server
 build_property.ProjectDir = D:\QAN_Program\Web\DotNet\AlgorithmWeb\Server\
 build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = D:\QAN_Program\Web\DotNet\AlgorithmWeb\Server
 build_property._RazorSourceGeneratorDebug = 
 
-[d:/QAN_Program/Web/DotNet/AlgorithmWeb/Server/Pages/Error.cshtml]
+[D:/QAN_Program/Web/DotNet/AlgorithmWeb/Server/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

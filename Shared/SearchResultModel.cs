@@ -9,6 +9,6 @@ namespace AlgorithmWeb.Shared
     public class SearchResultModel
     {
         public long opeNum {  get; set; }
-        public long serialNum { get; set; }
+        public int index { get; set; }
     }
 }

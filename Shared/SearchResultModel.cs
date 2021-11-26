@@ -8,6 +8,7 @@ namespace AlgorithmWeb.Shared
 {
     public class SearchResultModel
     {
+        public string type { get; set; }
         public long opeNum {  get; set; }
         public int index { get; set; }
     }

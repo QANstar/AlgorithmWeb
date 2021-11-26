@@ -16,6 +16,15 @@ else
 {
     <div  class="showAnim">
         <h3>检索算法</h3>
+        <div class="fixedRight">
+            <ul class="demo-ul">
+                <li><Anchor Target="anchor1" Offset="50">判断排序类型</Anchor></li>
+                <li><Anchor Target="anchor2" Offset="50">顺序搜索</Anchor></li>
+                <li><Anchor Target="anchor3" Offset="50">多种方法查找</Anchor></li>
+                <li><Anchor Target="anchor4" Offset="50">二分检索和三分检索找最大</Anchor></li>
+                <li><Anchor Target="anchor5" Offset="50">多种方法查找数组中第k个最小元素</Anchor></li>
+            </ul>
+        </div>
         <div class="leftCont">
             <div class="row g-3">
                 <div class="col-12">
@@ -29,7 +38,7 @@ else
             </div>
         </div>
         <div class="leftCont eachCont">
-            <h5>判断排序类型</h5>
+            <h5 id="anchor1">判断排序类型</h5>
             <div class="searchContent">
                 <p>设计一个算法判断要求2中产生的整数数组是否为未排序(输出0)、升序(输出1)、降序（输出2）、先升后降（输出3）、或先降后升（输出4）状态。</p>
                 <div class="searchCard">
@@ -52,7 +61,7 @@ else
             </div>
         </div>
         <div class="leftCont eachCont">
-            <h5>顺序搜索</h5>
+            <h5 id="anchor2">顺序搜索</h5>
             <div class="searchContent">
                 <p>给定某具体元素，使用顺序检索算法判断该具体元素是否出现在要求2中产生的数组中，并统计关键字比较次数。</p>
                 <div class="searchCard">
@@ -149,12 +158,12 @@ else
                 </div>
             </div>
             <div class="buttonGroup">
-                <div style="margin-right:10px;"><Button Text="清空" Color="Color.Danger" IsAsync="true" OnClick="@ClickAsyncClearButton" /></div>
+                <div style="margin-right:10px;"><Button Text="清空" Color="Color.Danger" IsAsync="true" OnClick="@ClickAsyncClearButton2" /></div>
                 <div><Button Text="确认" Color="Color.Success" IsAsync="true" OnClick="@ClickAsyncSureButton2" /></div>
             </div>
         </div>
         <div class="leftCont eachCont">
-            <h5>多种方法查找</h5>
+            <h5 id="anchor3">多种方法查找</h5>
             <div class="searchContent">
                 <p>给定某具体元素，使用多种方法（顺序查找、二分查找、三分查找、插值查找）判断该具体元素是否出现在要求2中产生的升序或降序的数组中，并统计关键字比较次数。</p>
                 <div class="searchCard">
@@ -166,7 +175,204 @@ else
                     }
                     else
                     {
-      
+                        <div class="row">
+                            <div class="col-12 searchNumInput">
+                                <FloatingLabel  TValue="string" @bind-Value="@searchNum2" LabelText="请输入想查找的数" ShowLabel="true"/>
+                                <Button style="margin-left:10px" Color="Color.Secondary" OnClick="@muchSearchClick">检索</Button>
+                            </div>
+                            <div class="col-12" style="margin-top:20px">
+                                <h5>检索结果:</h5>
+                                <div>
+                                    @if(searchResultModelList!=null)
+                                    {
+                                        @for(int i = 0; i < numArr2.Length; i++)
+                                        {
+                                            if(i == searchResultModelList[0].index - 1)
+                                            {
+                                                if(numArr2[i] == int.Parse(searchNum2))
+                                                {
+                                                    <span style="color:#FF6666">@numArr2[i]&nbsp&nbsp&nbsp&nbsp</span>
+                                                }
+                                                else
+                                                {
+                                                    <span style="color:#FF9933">@numArr2[i]&nbsp&nbsp&nbsp&nbsp</span>  
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <span>@numArr2[i]&nbsp&nbsp&nbsp&nbsp</span>
+                                            }
+                                        }
+                                        <div class="showAnim" style="margin-top:20px">
+                                            <div>
+                                                   @if(numArr2[searchResultModelList[0].index - 1] == int.Parse(searchNum2))
+                                                    {
+                                                        <Tag Icon="fa fa-fw fa-warning" Color="Color.Success">已找到</Tag>
+                                                        <div class="algTable">
+                                                                <Table TItem="SearchResultModel" Items="@searchResultModelList" IsBordered="true"  ShowLoading="true" >
+                                                                    <TableColumns>
+                                                                        <TableColumn @bind-Field="@context.type" Text="方法名称" Searchable="true" />
+                                                                        <TableColumn @bind-Field="@context.index" Text="元素所在位置" Searchable="true"/>
+                                                                        <TableColumn @bind-Field="@context.opeNum" Text="基本操作次数" Searchable="true"/>
+                                                                    </TableColumns>
+                                                                 </Table>
+                                                        </div>
+                                                     }
+                                                    else
+                                                    {
+                                                      <Tag Icon="fa fa-fw fa-warning" Color="Color.Warning">未找到</Tag>
+                                                      <div class="algTable">
+                                                          
+                                                                <Table TItem="SearchResultModel" Items="@searchResultModelList" IsBordered="true"  ShowLoading="true" >
+                                                                    <TableColumns>
+                                                                        <TableColumn @bind-Field="@context.type" Text="方法名称" Searchable="true" />
+                                                                        <TableColumn @bind-Field="@context.index" Text="最接近元素所在位置" Searchable="true"/>
+                                                                        <TableColumn @bind-Field="@context.opeNum" Text="基本操作次数" Searchable="true"/>
+                                                                    </TableColumns>
+                                                                 </Table>
+                                                        </div>
+                                                    }
+                                      
+                                            </div>
+                                            <div>
+                                                <Chart Width="70%" ChartType="ChartType.Bar" OnInitAsync="() => OnInit2(true)" />
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                         <Tag Icon="fa fa-fw fa-warning" Color="Color.Warning">未检索</Tag>
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                    }
+                </div>
+            </div>
+        </div>
+        <div style="margin-top:30px" class="leftCont">
+            <div class="row g-3">
+                <div class="col-12">
+                    <FloatingLabel  TValue="string" @bind-Value="@inputStr3" LabelText="请输入任意长度的先升后降数组（以 , 隔开）" ShowLabel="true"/>
+                </div>
+            </div>
+            <div class="buttonGroup">
+                <div style="margin-right:10px;"><Button Text="清空" Color="Color.Danger" IsAsync="true" OnClick="@ClickAsyncClearButton3" /></div>
+                <div><Button Text="确认" Color="Color.Success" IsAsync="true" OnClick="@ClickAsyncSureButton3" /></div>
+            </div>
+        </div>
+        <div class="leftCont eachCont">
+            <h5 id="anchor4">二分检索和三分检索找最大</h5>
+            <div class="searchContent">
+                <p>给定先升后降（或先降后升）数组，使用二分检索思路和三分检索思路查找数组的最大值（或最小值），并统计关键字比较次数。</p>
+                <div class="searchCard">
+                    @if (numArr3 == null)
+                    {
+                        <div class="orderTypeStyle">
+                             <Tag Icon="fa fa-fw fa-warning" Color="Color.Warning">未确认</Tag>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="row">
+                            <div class="col-12">
+                                <h5>检索结果:</h5>
+                                <div>
+                                    @if(searchResultModelList2!=null)
+                                    {
+                                        <div class="algTable" style="width:60vw">
+                                            <Table TItem="SearchResultModel" Items="@searchResultModelList2" IsBordered="true"  ShowLoading="true" >
+                                                <TableColumns>
+                                                    <TableColumn @bind-Field="@context.type" Text="方法名称" Searchable="true" />
+                                                    <TableColumn @bind-Field="@context.index" Text="最大值" Searchable="true">
+                                                        <Template Context="value">
+                                                            @numArr3[value.Value]
+                                                        </Template>
+                                                        </TableColumn>
+                                                    <TableColumn @bind-Field="@context.opeNum" Text="基本操作次数" Searchable="true"/>
+                                                </TableColumns>
+                                            </Table>
+                                        </div>
+                                        <div>
+                                            <Chart Width="70%" ChartType="ChartType.Bar" OnInitAsync="() => OnInit3(true)" />
+                                        </div>
+                                        
+                                    }
+                                    else
+                                    {
+                                         <Tag Icon="fa fa-fw fa-warning" Color="Color.Warning">未检索</Tag>
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                    }
+                </div>
+            </div>
+        </div>
+
+
+        <div style="margin-top:30px" class="leftCont">
+            <div class="row g-3">
+                <div class="col-12">
+                    <FloatingLabel  TValue="string" @bind-Value="@inputStr4" LabelText="请输入任意长度的无序数组（以 , 隔开）" ShowLabel="true"/>
+                </div>
+            </div>
+            <div class="buttonGroup">
+                <div style="margin-right:10px;"><Button Text="清空" Color="Color.Danger" IsAsync="true" OnClick="@ClickAsyncClearButton4" /></div>
+                <div style="margin-right:10px;"><Button Text="随机生成" Color="Color.Warning" IsAsync="true" OnClick="@ClickAsyncRandButton2" /></div>
+                <div><Button Text="确认" Color="Color.Success" IsAsync="true" OnClick="@ClickAsyncSureButton4" /></div>
+            </div>
+        </div>
+        <div class="leftCont eachCont">
+            <h5 id="anchor5">多种方法查找数组中第k个最小元素</h5>
+            <div class="searchContent">
+                <p>给定无序数组，使用多种方法（蛮力法、预排序、减可变规模）查找数组中第k个最小元素，并统计关键字比较次数。</p>
+                <div class="searchCard">
+                    @if (numArr4 == null)
+                    {
+                        <div class="orderTypeStyle">
+                             <Tag Icon="fa fa-fw fa-warning" Color="Color.Warning">未确认</Tag>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="row">
+                            <div class="col-12">
+                                <h5>检索结果:</h5>
+                                <div>
+                                    <div class="col-12 searchNumInput" style="margin-bottom:10px">
+                                        <FloatingLabel  TValue="string" @bind-Value="@searchNum3" LabelText="请输入k" ShowLabel="true"/>
+                                        <Button style="margin-left:10px" Color="Color.Secondary" OnClick="@kSearchClick">检索</Button>
+                                    </div>
+                                    @if(searchResultModelList3!=null)
+                                    {
+                                        <div class="algTable" style="width:60vw">
+                                            <Table TItem="SearchResultModel" Items="@searchResultModelList3" IsBordered="true"  ShowLoading="true" >
+                                                <TableColumns>
+                                                    <TableColumn @bind-Field="@context.type" Text="方法名称" Searchable="true" />
+                                                    <TableColumn @bind-Field="@context.index" Text="第k小值" Searchable="true" />
+                                                    <TableColumn @bind-Field="@context.opeNum" Text="基本操作次数" Searchable="true"/>
+                                                </TableColumns>
+                                            </Table>
+                                        </div>
+                                        <div>
+                                            <Chart Width="70%" ChartType="ChartType.Bar" OnInitAsync="() => OnInit4(true)" />
+                                        </div>
+                                        
+                                    }
+                                    else
+                                    {
+                                         <Tag Icon="fa fa-fw fa-warning" Color="Color.Warning">未检索</Tag>
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                        
                     }
                 </div>
             </div>
